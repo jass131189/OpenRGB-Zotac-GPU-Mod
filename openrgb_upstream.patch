@@ -1,0 +1,19 @@
+diff --git a/pci_ids/pci_ids.h b/pci_ids/pci_ids.h
+--- a/pci_ids/pci_ids.h
++++ b/pci_ids/pci_ids.h
+@@ -120,6 +120,7 @@
+ #define NVIDIA_RTX5080_DEV                              0x2C02
+ #define NVIDIA_RTX5070TI_DEV                            0x2C05
+ 
+ /*---------------------------------------------------------*\
+ | ZOTAC Sub-Vendor & Sub-Device IDs                        |
+ \*---------------------------------------------------------*/
++#define ZOTAC_SUB_VEN                                   0x19DA
++#define ZOTAC_RTX5070TI_SOLID_OC_SUB_DEV                0x2765
+ 
+diff --git a/Controllers/ZotacBlackwellGPUController/ZotacBlackwellGPUControllerDetect.cpp b/Controllers/ZotacBlackwellGPUController/ZotacBlackwellGPUControllerDetect.cpp
+--- a/Controllers/ZotacBlackwellGPUController/ZotacBlackwellGPUControllerDetect.cpp
++++ b/Controllers/ZotacBlackwellGPUController/ZotacBlackwellGPUControllerDetect.cpp
+@@ -18,3 +18,4 @@
+ REGISTER_I2C_PCI_DETECTOR("ZOTAC GAMING GeForce RTX 5090 AMP Extreme", DetectZotacBlackwellGPUControllers, NVIDIA_VEN, NVIDIA_RTX5090_DEV, ZOTAC_SUB_VEN, ZOTAC_RTX5090_AMP_EXTREME_SUB_DEV, 0x49);
++REGISTER_I2C_PCI_DETECTOR("ZOTAC GAMING GeForce RTX 5070 Ti SOLID OC", DetectZotacBlackwellGPUControllers, NVIDIA_VEN, NVIDIA_RTX5070TI_DEV, ZOTAC_SUB_VEN, ZOTAC_RTX5070TI_SOLID_OC_SUB_DEV, 0x49);
